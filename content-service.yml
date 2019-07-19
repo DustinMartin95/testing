@@ -1,6 +1,7 @@
 
 spring:
-  application:    name: CMSFORCE
+  application:
+    name: CMSFORCE
   datasource:
       driver-class-name: oracle.jdbc.driver.OracleDriver
       url: ${DB_URL}
