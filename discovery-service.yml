@@ -13,7 +13,9 @@ eureka :
     hostname : localhost
 
   client :
-    healthcheck:      enabled: false
+
+    healthcheck:
+      enabled: false
 
     register-with-eureka : false
 
