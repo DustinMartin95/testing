@@ -5,8 +5,8 @@ spring:
   datasource:
       driver-class-name: oracle.jdbc.driver.OracleDriver
       url: ${DB_URL}
-      username: ${DB_USER}
-      password: ${DB_PASS}
+      username: admin
+      password: password123
   jpa:
      hibernate:
       show-sql: false
@@ -36,7 +36,7 @@ eureka:
 
     service-url:
 
-      defaultZone: ${EUREKA_URL}
+      defaultZone: http://localhost:8761/eureka/
 
   instance:
 
