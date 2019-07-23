@@ -1,15 +1,9 @@
 spring:
-  profiles:
-    active: ${spring.profiles.active}
   application:
     name: zuul
     
 server :
   port : 9009
- 
----
-spring:
-  profile: local
   
 zuul:
   prefix: /CMSforce
@@ -18,58 +12,3 @@ zuul:
       path: /as/**
       service-id: CMSFORCE
       
-ribbon:
-  ConnectTimeout: 30000
-  ReadTimeout: 30000
-      
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-  instance:
-    lease-expiration-duration-in-seconds: 2
-    lease-renewal-interval-in-seconds: 1
----
-spring:
-  profile: dev
-  
-zuul:
-  prefix: /CMSforce
-  routes:
-    books:
-      path: /as/**
-      service-id: CMSFORCE
-      
-ribbon:
-  ConnectTimeout: 30000
-  ReadTimeout: 30000
-      
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-  instance:
-    lease-expiration-duration-in-seconds: 2
-    lease-renewal-interval-in-seconds: 1
----
-spring:
-  profile: prod
-  
-zuul:
-  prefix: /CMSforce
-  routes:
-    books:
-      path: /as/**
-      service-id: CMSFORCE
-      
-ribbon:
-  ConnectTimeout: 30000
-  ReadTimeout: 30000
-      
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-  instance:
-    lease-expiration-duration-in-seconds: 2
-    lease-renewal-interval-in-seconds: 1
