@@ -1,7 +1,13 @@
-
 spring:
   application:
     name: CMSFORCE
+    
+server:
+  port: 9002
+  
+---
+spring:
+  profile: local
   datasource:
       driver-class-name: oracle.jdbc.driver.OracleDriver
       url: ${DB_URL}
@@ -10,42 +16,54 @@ spring:
   jpa:
      hibernate:
       show-sql: false
-       
-logging:
-  config:
-  file: /home/ec2-user/.jenkins/workspace/CMSforce/CMSforce/src/main/resources/ErrorLog.html
-  
-  
-  pattern:
-    file: "%d %-5level [%thread] %logger : %msg%n"
-  level:
-   
-    
-    com.revature: error, info
-    org.hibernate: error, warn
-    org.apache.catalina: off
-    com.zaxxer.hikari: off
-
-       
-
-server:
-  port: 9002
+      
 eureka:
-
   client:
-
     service-url:
-
-      defaultZone: ${EUREKA_URL}
-
+      defaultZone: http://localhost:8761/eureka/
   instance:
-
     lease-expiration-duration-in-seconds: 2
-
     lease-renewal-interval-in-seconds: 1
-
-
-
+    
+---
+spring:
+  profile: dev
+  datasource:
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+      url: ${DB_URL}
+      username: ${DB_USER}
+      password: ${DB_PASS}
+  jpa:
+     hibernate:
+      show-sql: false
+      
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL}
+  instance:
+    lease-expiration-duration-in-seconds: 2
+    lease-renewal-interval-in-seconds: 1
+    
+---
+spring:
+  profile: prod
+  datasource:
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+      url: ${DB_URL}
+      username: ${DB_USER}
+      password: ${DB_PASS}
+  jpa:
+     hibernate:
+      show-sql: false
+      
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL}
+  instance:
+    lease-expiration-duration-in-seconds: 2
+    lease-renewal-interval-in-seconds: 1
   
           
       
