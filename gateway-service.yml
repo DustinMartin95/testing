@@ -47,7 +47,7 @@ ribbon:
 eureka:
   client:
     service-url:
-      defaultZone: ${dev}
+      defaultZone: http://localhost:8761/eureka/
   instance:
     lease-expiration-duration-in-seconds: 2
     lease-renewal-interval-in-seconds: 1
@@ -69,7 +69,7 @@ ribbon:
 eureka:
   client:
     service-url:
-      defaultZone: ${prod}
+      defaultZone: http://localhost:8761/eureka/
   instance:
     lease-expiration-duration-in-seconds: 2
     lease-renewal-interval-in-seconds: 1
