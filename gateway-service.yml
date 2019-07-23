@@ -27,7 +27,6 @@ eureka:
   instance:
     lease-expiration-duration-in-seconds: 2
     lease-renewal-interval-in-seconds: 1
-    
 ---
 spring:
   profile: dev
@@ -50,7 +49,6 @@ eureka:
   instance:
     lease-expiration-duration-in-seconds: 2
     lease-renewal-interval-in-seconds: 1
-    
 ---
 spring:
   profile: prod
